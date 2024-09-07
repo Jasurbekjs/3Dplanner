@@ -1,5 +1,5 @@
-import { Scene } from 'three'
+import { Scene } from "three";
 
 const scene = new Scene();
 
-console.log(scene)
+console.log(scene);
