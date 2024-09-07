@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+.header + hr {
+  margin: 10px 0;
+}
+.planner {
+  display: flex;
+  justify-content: center;
+}
