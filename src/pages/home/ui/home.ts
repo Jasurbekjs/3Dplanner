@@ -1,5 +1,6 @@
 import { render as Planner } from "../../../widgets/planner/ui/planner.ts";
 import { Main } from "../../../shared/visualizer/model/main.ts";
+import { BoxGeometry, MeshNormalMaterial, Mesh } from "three";
 
 const appId = "app";
 
@@ -16,9 +17,16 @@ export function render() {
             </div>
         </div>
   `;
-  let planner: Main | null = null;
-  setTimeout(() => (planner = Planner(appId)), 0);
-  planner;
-
+  setTimeout(() => planner(), 0);
   return template;
+}
+
+function planner() {
+  const planner = Planner(appId) as Main;
+  const geometry = new BoxGeometry(200, 200, 200);
+  const material = new MeshNormalMaterial();
+  const mesh = new Mesh(geometry, material);
+
+  planner.scene.add(mesh);
+  planner.render();
 }
